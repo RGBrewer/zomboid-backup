@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Zomboid Backup</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+  <div class="app">
+      <div class="column-left">
+          <div>
+              <button href="#" onclick="selectSaveFolder();">Select Save Folder</button><br>
+              <br>
+              Current Save Folder: <span id="saveFolder"></span>
+          </div>
+
+          <h3>Timer:</h3>
+          <select id="interval" onchange="intervalChanged()">
+              <option value="15">15 Minutes</option>
+              <option value="30">30 Minutes</option>
+              <option value="45">45 Minutes</option>
+              <option value="60">60 Minutes</option>
+          </select>
+
+          <button onclick="startInterval()">Start Watching</button>
+          <button onclick="stopInterval()">Stop Watching</button>
+          <br>
+
+          <br>
+          <button onclick="openBackups()">Open Backups Folder</button>
+
+      </div>
+      <div class="column-right">
+          <h3>Restore From Backup</h3>
+          <p>Warning! Close the game first!</p>
+          <p>Do not close this window until restoration is complete</p>
+          <button onclick="restoreBackup()">Restore From Backup</button>
+      </div>
+
+
+
+  </div>
+
+  <div class="status-bar">
+      <div class="messages">
+          <p>Status:  <span id="status"></span></p>
+          <p id="watchingOrNot"></p>
+      </div>
+  </div>
+
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/zomboid.js"></script>
+    <script src="js/neutralino.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      const zomboid = new Zomboid()
+
+      async function selectSaveFolder() {
+        await zomboid.selectSaveFolder()
+      }
+
+      function intervalChanged() {
+        const interval = $('#interval').val();
+        zomboid.config.intervalMinutes = interval
+        zomboid.initTimer()
+      }
+
+      async function restoreBackup() {
+        zomboid.restoreBackup()
+      }
+
+      function startInterval() {
+        zomboid.initTimer()
+        zomboid.backup()
+      }
+
+      function stopInterval() {
+        zomboid.stopTimer()
+      }
+
+      function openBackups() {
+          zomboid.openBackups()
+      }
+
+    </script>
+  </body>
+</html>
+
