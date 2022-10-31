@@ -94,7 +94,7 @@ class Zomboid {
 
     openBackups() {
         if (this.config.backupFolder) {
-            Neutralino.os.open(zomboid.config.backupFolder)
+            Neutralino.os.open(this.config.backupFolder)
         }
     }
 }
