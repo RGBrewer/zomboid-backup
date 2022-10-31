@@ -1,6 +1,8 @@
 
 # Zomboid Backup
 
+![Screenshot](screenshot.png)
+
 This project makes backups of your saved game folder at a desired interval.
 Never lose your character to some random bug again.
 
