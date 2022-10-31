@@ -26,7 +26,7 @@ no other dependencies.
 
 `neu run` to run locally
 
-`neu build` to build executables to the /dist folder
+`neu build` to build executables to the `/dist` folder
 
 ### Something to remember ...
 Your save folder can get pretty large. Several GB. You should prune it from time to time. This software makes a complete copy, so the larger it is the slower / more resource-intensive it is to copy.
