@@ -9,9 +9,9 @@ Never lose your character to some random bug again.
 This is a neutralinoJS app.
 https://github.com/neutralinojs/neutralinojs
 
-Its mostly boring html and js
+Neutralino allows you to quickly build apps with just html/css. It uses the OS's native browser and wraps it in a window, so you dont have to package an entire browser like electron. This makes our file size super small (like 2MB!), works on Windows/Mac/Linux, and compiles super quick! 
 
-:: Key Files you care about ::
+## Key Files you care about ##
  - **resources/index.html** 
    - entry point to the app
 
